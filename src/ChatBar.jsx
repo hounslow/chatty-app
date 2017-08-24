@@ -6,29 +6,29 @@ class ChatBar extends Component {
     super();
     this.state = {
       content: "",
-      username: "Anon"
+      username: "Bob"
     }
   };
 
   getUser = (event) => {
-    this.setState({username: event.target.value});
+    const username = event.target.value ? event.target.value : 'Anonymous';
+    this.props.updateUser(username);
   }
 
   handleInput = (event) => {
     if (event.key === "Enter"){
-      this.setState({content: event.target.value}, function() {
-        this.props.onNewPost(this.state);
-      });
-    }
-  }
+        this.props.onNewPost(event.target.value);
+        event.target.value = '';
+      }
+    };
 
   render() {
     return (
       <footer className="chatbar">
-      <input className="chatbar-username" placeholder="Your Name (Optional)" onKeyUp={this.getUser} />
+      <input className="chatbar-username" placeholder="Your Name (Optional)" defaultValue={this.props.currentUser} onBlur={this.getUser} />
       <input className="chatbar-message" placeholder="Type a message and hit ENTER" onKeyPress={this.handleInput} />
       </footer>
-    )
+    );
   }
 }
 

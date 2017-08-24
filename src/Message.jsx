@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 
 class Message extends Component {
   render() {
-    // <div className="message system">
-    //   Anonymous1 changed their name to nomnom.
-    // </div>
     return (
       <div>
         <div className="message">
