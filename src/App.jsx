@@ -7,19 +7,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentUser: {name: "Bob"}, // optional. if currentUser is not defined, it means the user is Anonymous
-      messages: [
-        {
-          id: 1,
-          username: "Bob",
-          content: "Has anyone seen my marbles?",
-        },
-        {
-          id: 2,
-          username: "Anonymous",
-          content: "No, I think you lost them. You lost your marbles Bob. You lost them for good."
-        }
-      ]
+      currentUser: {name: "Bob"},
+      messages: []
     };
     this.onNewPost = this.onNewPost.bind(this);
   }
@@ -30,7 +19,6 @@ class App extends Component {
     event.target.value = '';
   }
 
-  // in App.jsx
   componentDidMount() {
     this.socket = new WebSocket('ws://localhost:3001');
 
