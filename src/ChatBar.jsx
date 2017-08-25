@@ -8,19 +8,19 @@ class ChatBar extends Component {
       content: '',
       currentUser: 'Bob'
     }
-  }
+  };
 
-  getUser(event) {
+  getUser = (event) => {
     const username = event.target.value ? event.target.value : 'Anonymous';
     this.props.updateUser(username);
   }
 
-  handleInput(event) {
+  handleInput = (event) => {
     if (event.key === 'Enter'){
         this.props.onNewPost(event.target.value);
         event.target.value = '';
       }
-    }
+    };
 
   render() {
     return (
