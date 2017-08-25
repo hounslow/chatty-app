@@ -30,5 +30,4 @@ open http://localhost:3000
 
 ### Screenshots
 
-![alt text]()
-![alt text]()
+![Image showing notifications, user count and messaging](https://github.com/hounslow/chatty-app/blob/master/images/Screen%20Shot%202017-08-25%20at%208.39.18%20AM.png)
