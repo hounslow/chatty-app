@@ -44,7 +44,7 @@ wss.on('connection', (socket) => {
     if (receivedMessage.type === 'postMessage'){
       console.log(`User ${receivedMessage.currentUser} said ${receivedMessage.content}`);
       messageObject = {
-        type: "incomingMessage",
+        type: 'incomingMessage',
         key: uuid(),
         currentUser: receivedMessage.currentUser,
         content: receivedMessage.content
@@ -53,9 +53,9 @@ wss.on('connection', (socket) => {
     if (receivedMessage.type === 'postUpdate'){
       const updateResponse = `User ${receivedMessage.pastUser} changed their name to ${receivedMessage.newUser}`;
       messageObject = {
-        type: "incomingUpdate",
+        type: 'incomingUpdate',
         key: uuid(),
-        currentUser: "UPDATE:",
+        currentUser: 'UPDATE:',
         content: updateResponse,
       };
     }
