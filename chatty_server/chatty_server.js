@@ -42,11 +42,11 @@ wss.on('connection', (socket) => {
     let messageObject;
 
     if (receivedMessage.type === 'postMessage'){
-      console.log(`User ${receivedMessage.username} said ${receivedMessage.content}`);
+      console.log(`User ${receivedMessage.currentUser} said ${receivedMessage.content}`);
       messageObject = {
         type: "incomingMessage",
         key: uuid(),
-        username: receivedMessage.username,
+        currentUser: receivedMessage.currentUser,
         content: receivedMessage.content
       };
     }
@@ -55,7 +55,7 @@ wss.on('connection', (socket) => {
       messageObject = {
         type: "incomingUpdate",
         key: uuid(),
-        username: "UPDATE:",
+        currentUser: "UPDATE:",
         content: updateResponse,
       };
     }

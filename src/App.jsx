@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentUser: "Bob",
+      currentUser: 'Bob',
       messages: []
     };
     this.onNewPost = this.onNewPost.bind(this);
@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   onNewPost(content){
-    const newMessage = {type: 'postMessage', username: this.state.currentUser, content: content};
+    const newMessage = {type: 'postMessage', currentUser: this.state.currentUser, content: content};
     this.socket.send(JSON.stringify(newMessage));
   }
 
